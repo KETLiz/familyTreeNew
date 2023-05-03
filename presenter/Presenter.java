@@ -12,8 +12,8 @@ public class Presenter {
         view.setPresenter(this);
     }
 
-    public void addHuman(String name, int birthYear) {
-        service.addHuman(name, birthYear);
+    public void addHuman(String name, int birthYear, Human mother, Human father) {
+        service.add(name, birthYear);
     }
 
     public void showMembers() {
