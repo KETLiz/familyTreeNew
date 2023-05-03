@@ -14,10 +14,10 @@ public class Service {
     }
     
     public String showInfo() {
-        // for(Human human : familyTree) {
-        //     return human.getInfo();
-        // }
-        return familyTree.showInfo();
+        for(Human human : familyTree) {
+            return human.getInfo();
+        }
+        //return familyTree.showInfo();
     }
     
     public Human getHumanByName(String name) {

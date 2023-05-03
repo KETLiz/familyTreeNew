@@ -48,6 +48,6 @@ public class FamilyTree implements Iterable<Human> {
     }
     
     public Iterator<Human> iterator() {
-        return new HumanIterator();
+        return new HumanIterator(familyList);
     }
 }

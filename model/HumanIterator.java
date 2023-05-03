@@ -1,24 +1,24 @@
 package model;
 
 import java.util.Iterator;
-import java.util.*;
+import java.util.List;
 
 public class HumanIterator implements Iterator<Human> {
-    List<Human> familyList;
-    int index;
+    private List<Human> familyList;
+    private int index;
 
     public HumanIterator(List<Human> familyList) {
         this.familyList = familyList;
     }
+
     @Override
     public boolean hasNext() {
-        index < familyList.size();
+        return index < familyList.size();
     }
 
     @Override
     public Human next() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'next'");
+        return familyList.get(index++);
     }
     
 }
