@@ -24,21 +24,10 @@ public class Console implements View{
     public void start() {
         System.out.println("Привет!");
         while(work) {
-            System.out.println("Доступные команды:\n1. Показать всех членов семьи\n2. Добавить члена семьи\n3. Выход");
-            String command = sc.nextLine();
-            switch(command) {
-                case "1":
-                    showMembers();
-                    break;
-                case "2":
-                    addHuman();
-                    break;
-                case "3":
-                    exit();
-                    break;
-                default:
-                    System.out.println("Такой команды нет");
-            }
+            System.out.println(menu.showCommands());
+            String line = sc.nextLine();
+            int numCommand = Integer.parseInt(line);
+            menu.execute(numCommand);
         }
     }
 

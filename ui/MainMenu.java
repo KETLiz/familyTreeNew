@@ -21,7 +21,7 @@ public class MainMenu {
     public String showCommands() {
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < commandList.size(); i++) {
-            sb.append("i+1");
+            sb.append(i+1);
             sb.append(". ");
             sb.append(commandList.get(i).getDescription());
             sb.append("\n");
