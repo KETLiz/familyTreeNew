@@ -5,7 +5,6 @@ public class Service {
     
     public Service() {
         familyTree = new FamilyTree();
-        System.out.println("Привет из Service");
     }
     
     public void add(String name, int birthYear, Human mother, Human father) {
@@ -18,10 +17,17 @@ public class Service {
             sb.append(human);
         }
         return sb.toString();
-        //return familyTree.showInfo();
     }
     
     public Human getHumanByName(String name) {
         return familyTree.getHumanByName(name);
+    }
+
+    public void sortByName() {
+        familyTree.sortByName();
+    }
+
+    public void sortByAge() {
+        familyTree.sortByAge();
     }
 }

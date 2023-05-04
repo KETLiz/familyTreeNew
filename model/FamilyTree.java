@@ -1,6 +1,8 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -10,7 +12,6 @@ public class FamilyTree implements Iterable<Human> {
     
     public FamilyTree() {
         familyList = new ArrayList<>();
-        System.out.println("Привет из FamilyTree");
     }
     
     public void add(Human human) {
@@ -21,7 +22,6 @@ public class FamilyTree implements Iterable<Human> {
         if(human.getFather() != null) {
             human.getFather().addChild(human);
         }
-        System.out.println("Привет из метода add в классе FamilyTree");
     }
     
     public String showInfo() {
@@ -49,5 +49,13 @@ public class FamilyTree implements Iterable<Human> {
     
     public Iterator<Human> iterator() {
         return new HumanIterator(familyList);
+    }
+
+    public void sortByName() {
+        familyList.sort(new HumanComporatorByName());
+    }
+
+    public void sortByAge() {
+        familyList.sort(new HumanComporatorByAge());
     }
 }

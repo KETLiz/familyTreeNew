@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Human {
+public class Human implements Comparable<Human>{
     String name;
     int birthYear;
     Human mother;
@@ -24,6 +24,10 @@ public class Human {
 
     public String getName() {
         return name;
+    }
+
+    public int getBirthYear() {
+        return birthYear;
     }
 
     public String toString() {
@@ -96,5 +100,14 @@ public class Human {
             sb.append("не найдены");
         }
         return sb.toString();
+    }
+
+    @Override
+    public int compareTo(Human o) {
+        return this.name.compareTo(o.name);
+    }
+
+    public void sortByAge() {
+
     }
 }

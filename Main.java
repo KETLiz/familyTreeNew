@@ -9,6 +9,9 @@ public class Main {
         s.add("Liza", 1991, s.getHumanByName("Natalia"), s.getHumanByName("Timur"));
         s.add("Lenya", 2005, s.getHumanByName("Natalia"), s.getHumanByName("Timur"));
         System.out.println(s.showInfo());
-        System.out.println();
+        s.sortByName();
+        System.out.println(s.showInfo());
+        s.sortByAge();
+        System.out.println(s.showInfo());
     }
 }
