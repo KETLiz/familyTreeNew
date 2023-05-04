@@ -1,4 +1,5 @@
 package presenter;
+import model.Human;
 import model.Service;
 import ui.View;
 
@@ -13,10 +14,10 @@ public class Presenter {
     }
 
     public void addHuman(String name, int birthYear, Human mother, Human father) {
-        service.add(name, birthYear);
+        service.add(name, birthYear, mother, father);
     }
 
     public void showMembers() {
-        view.print(null);
+        view.print(service.showInfo());
     }
 }
