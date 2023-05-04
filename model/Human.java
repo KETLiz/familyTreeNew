@@ -16,20 +16,35 @@ public class Human {
         this.mother = mother;
         this.father = father;
         children = new ArrayList<>();
-        System.out.println("Привет из 1 конструктора Human");
     }
     
     public Human(String name, int birthYear) {
         this(name, birthYear, null, null);
-        System.out.println("Привет из 2 конструктора Human");
     }
-    
-    public String toString() {
+
+    public String getName() {
         return name;
+    }
+
+    public String toString() {
+        return getInfo();
     }
     
     public String getInfo() {
-        return "Имя: " + name + ", год рождения: " + birthYear + ". Мама: " + getMotherByName() + ". Папа: " + getFatherByName() + ". Дети: " + getChildInfo() + "\n";
+        //return "Имя: " + name + ", год рождения: " + birthYear + ". Мама: " + getMotherByName() + ". Папа: " + getFatherByName() + ". Дети: " + getChildInfo() + "\n";
+        StringBuilder sb = new StringBuilder();
+        sb.append("Имя: ");
+        sb.append(getName());
+        sb. append(", год рождения: ");
+        sb.append(birthYear);
+        sb.append(", мама: ");
+        sb.append(getMotherByName());
+        sb.append(", папа: ");
+        sb.append(getFatherByName());
+        sb.append(", дети: ");
+        sb.append(getChildInfo());
+        sb.append("\n");
+        return sb.toString();
     }
     
     public boolean equals(String name) {
@@ -67,9 +82,19 @@ public class Human {
     }
     
     public String getChildInfo() {
-        if(children == null) {
-            return "не найдены"; 
+        StringBuilder sb = new StringBuilder();
+        if(children.size() != 0) {
+            for(int i = 0; i < children.size(); i++) {
+                sb.append(children.get(i).getName());
+                if(i < children.size() - 1) {
+                    sb.append(", ");
+                } else if(i == children.size() - 1) {
+                    sb.append(".");
+                }
+            }
+        } else {
+            sb.append("не найдены");
         }
-        return children.toString();
+        return sb.toString();
     }
 }

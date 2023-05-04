@@ -10,13 +10,14 @@ public class Service {
     
     public void add(String name, int birthYear, Human mother, Human father) {
         familyTree.add(new Human(name, birthYear, mother, father));
-        System.out.println("Привет из метода add в классе Service");
     }
     
     public String showInfo() {
+        StringBuilder sb = new StringBuilder();
         for(Human human : familyTree) {
-            return human.getInfo();
+            sb.append(human);
         }
+        return sb.toString();
         //return familyTree.showInfo();
     }
     
