@@ -8,10 +8,12 @@ public class Console implements View{
     private Presenter presenter;
     private Scanner sc;
     private boolean work;
+    private MainMenu menu;
 
     public Console() {
         sc = new Scanner(System.in);
         work = true;
+        menu = new MainMenu(this);
     }
     @Override
     public void print(String text) {
