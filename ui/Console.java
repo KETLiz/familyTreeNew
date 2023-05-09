@@ -9,6 +9,7 @@ public class Console implements View{
     private Scanner sc;
     private boolean work;
     private MainMenu menu;
+    private static final String INPUT_ERROR = "Вы ввели неверное значение";
 
     public Console() {
         sc = new Scanner(System.in);
@@ -24,10 +25,8 @@ public class Console implements View{
     public void start() {
         System.out.println("Привет!");
         while(work) {
-            System.out.println(menu.showCommands());
-            String line = sc.nextLine();
-            int numCommand = Integer.parseInt(line);
-            menu.execute(numCommand);
+            print();
+            execute();            
         }
     }
 
@@ -46,7 +45,6 @@ public class Console implements View{
         // System.out.println("Введите имя папы: ");
         // String fatherName = sc.nextLine();
         presenter.addHuman(name, birthYear, null, null); //, motherName, fatherName);
-        System.out.println("\nДоступные команды:\n1. Показать всех членов семьи\n2. Добавить члена семьи\n3. Выход");
     }
 
     public void showMembers() {
@@ -57,4 +55,34 @@ public class Console implements View{
         work = false;
         return work;
     }
+
+    private void print() {
+        System.out.println(menu.showCommands());
+    }
+
+    private void execute() {
+        String line = sc.nextLine();
+        if(checkTextForPoint(line)) {
+            int numCommand = Integer.parseInt(line);
+            if(numCommand < menu.size() + 1) {
+                menu.execute(numCommand);
+            } else {
+                inputError();
+            }
+        }
+    }
+
+    private boolean checkTextForPoint(String line) {
+        if(line != null && line.matches("[0-9]+")) {
+            return true;
+        } else {
+            inputError();
+            return false;
+        }
+    }
+
+    private void inputError() {
+        System.out.println(INPUT_ERROR);
+    }
+
 }

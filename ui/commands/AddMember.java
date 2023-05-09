@@ -8,7 +8,7 @@ public class AddMember implements Command {
     public AddMember(Console console) {
         this.console = console;
     }
-    
+
     @Override
     public String getDescription() {
         return "Добавить члена семьи";
@@ -16,7 +16,7 @@ public class AddMember implements Command {
 
     @Override
     public void execute() {
-        console.addHuman();;
+        console.addHuman();
     }
     
 }

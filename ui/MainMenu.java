@@ -32,4 +32,8 @@ public class MainMenu {
     public void execute(int numCommand) {
         commandList.get(numCommand - 1).execute();
     }
+
+    public int size() {
+        return commandList.size();
+    }
 }
