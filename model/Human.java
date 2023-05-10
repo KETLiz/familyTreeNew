@@ -22,6 +22,10 @@ public class Human implements Comparable<Human>{
         this(name, birthYear, null, null);
     }
 
+    public Human(String name) {
+        this(name, 0, null, null);
+    }
+
     public String getName() {
         return name;
     }
@@ -35,7 +39,6 @@ public class Human implements Comparable<Human>{
     }
     
     public String getInfo() {
-        //return "Имя: " + name + ", год рождения: " + birthYear + ". Мама: " + getMotherByName() + ". Папа: " + getFatherByName() + ". Дети: " + getChildInfo() + "\n";
         StringBuilder sb = new StringBuilder();
         sb.append("Имя: ");
         sb.append(getName());

@@ -1,4 +1,5 @@
 package presenter;
+import model.FamilyTree;
 import model.Human;
 import model.Service;
 import ui.View;
@@ -19,5 +20,9 @@ public class Presenter {
 
     public void showMembers() {
         view.print(service.showInfo());
+    }
+
+    public Human getHumanByName(String name) {
+        return service.getHumanByName(name);
     }
 }

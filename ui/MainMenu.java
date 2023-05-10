@@ -26,6 +26,7 @@ public class MainMenu {
             sb.append(commandList.get(i).getDescription());
             sb.append("\n");
         }
+        sb.deleteCharAt(sb.length() - 1);
         return sb.toString();
     }
 

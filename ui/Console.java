@@ -38,13 +38,13 @@ public class Console implements View{
     public void addHuman() {
         System.out.println("Введите имя: ");
         String name = sc.nextLine();
-        System.out.println("Введите год рождения человека: ");
-        int birthYear = sc.nextInt();
-        // System.out.println("Введите имя мамы: ");
-        // String motherName = sc.nextLine();
-        // System.out.println("Введите имя папы: ");
-        // String fatherName = sc.nextLine();
-        presenter.addHuman(name, birthYear, null, null); //, motherName, fatherName);
+        // System.out.println("Введите год рождения человека: ");
+        // int birthYear = sc.nextInt();
+        System.out.println("Введите имя мамы: ");
+        String motherName = sc.nextLine();
+        System.out.println("Введите имя папы: ");
+        String fatherName = sc.nextLine();
+        presenter.addHuman(name, 0, presenter.getHumanByName(motherName), presenter.getHumanByName(fatherName));
     }
 
     public void showMembers() {
