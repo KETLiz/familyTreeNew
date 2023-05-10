@@ -44,6 +44,7 @@ public class Console implements View{
         String motherName = sc.nextLine();
         System.out.println("Введите имя папы: ");
         String fatherName = sc.nextLine();
+        
         presenter.addHuman(name, birthYear, presenter.getHumanByName(motherName), presenter.getHumanByName(fatherName));
     }
 
